@@ -1,0 +1,48 @@
+/* 브라우저 마진과 패딩 리셋 */
+* {margin:50;padding:50;}
+
+.slidebox input[id*="slide"] {
+  display: none;
+}
+.slidebox .slidewrap2 {
+  max-width:1100px;
+  margin:0 auto;
+  overflow: hidden;
+}
+.slidebox .slidelist2 {
+  white-space: nowrap;
+  font-size: 0;
+}
+.slidebox .slidelist2 > li {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  transition: all .5s;
+}
+.slidebox .slidelist2 > li > a {
+  display: block;
+  position: relative;
+}
+.slidebox .slidelist2 > li > a img {
+  width: 100%;
+}
+.slidebox .slidelist2 label {
+  position: absolute;
+  z-index: 100;
+  top:50%;
+  transform: translateY(-50%);
+  padding: 50px;
+  cursor: pointer;;
+}
+.slidebox .slidelist2 .left {
+  left:-20px;
+  background: url('./img/left.png') center center / 100% no-repeat;
+}
+.slidebox .slidelist2 .right {
+  right:-20px;
+  background: url('./img/right.png') center center / 100% no-repeat;
+}
+.slidebox input[id="slide01"]:checked ~ .slidewrap2 .slidelist2 > li {transform: translateX(0%);}
+.slidebox input[id="slide02"]:checked ~ .slidewrap2 .slidelist2 > li {transform: translateX(-100%);}
+.slidebox input[id="slide03"]:checked ~ .slidewrap2 .slidelist2 > li {transform: translateX(-200%);}
+.slidebox input[id="slide04"]:checked ~ .slidewrap2 .slidelist2 > li {transform: translateX(-300%);}
